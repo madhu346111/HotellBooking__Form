@@ -1,10 +1,10 @@
-// Show booking page
+
 function enterBooking(){
   document.getElementById('welcomePage').style.display='none';
   document.getElementById('bookingPage').style.display='block';
 }
 
-// Room selection
+
 let selectedRoom = '';
 let roomPrice = 0;
 document.querySelectorAll('.room-selection img').forEach(img=>{
@@ -17,7 +17,7 @@ document.querySelectorAll('.room-selection img').forEach(img=>{
   });
 });
 
-// Booking form submit
+
 document.getElementById('bookingForm').addEventListener('submit', function(e){
   e.preventDefault();
   const name = document.getElementById('name').value.trim();
@@ -39,11 +39,11 @@ document.getElementById('bookingForm').addEventListener('submit', function(e){
     return;
   }
 
-  // Hide booking page, show success page
+  
   document.getElementById('bookingPage').style.display='none';
   document.getElementById('successPage').style.display='block';
 
-  // Fill success info
+  
   document.getElementById('showRoomType').innerText = "Room Type: " + selectedRoom;
   document.getElementById('showName').innerText = "Name: " + name;
   document.getElementById('showEmail').innerText = "Email: " + email;
@@ -52,3 +52,4 @@ document.getElementById('bookingForm').addEventListener('submit', function(e){
   document.getElementById('showCheckout').innerText = "Check-Out: " + checkout;
   document.getElementById('showAmount').innerText = "Amount:₹ " + roomPrice;
 });
+
